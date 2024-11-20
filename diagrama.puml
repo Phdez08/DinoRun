@@ -1,0 +1,39 @@
+@startuml Diagrama
+
+class Dino {
+    - posicion
+    - velocidad
+    - estado
+    + saltar()
+    + correr()
+    + colisionar()
+}
+
+class Obstaculo {
+    - tipo
+    - posicion
+    + mover()
+}
+
+class Escenario {
+    - ancho
+    - alto
+    + actualizar()
+}
+
+class Juego {
+    - puntaje
+    + iniciar()
+    + terminar()
+    + actualizarPuntaje()
+}
+
+
+Dino --> Escenario
+Dino --> Obstaculo
+Escenario *-- Obstaculo
+Juego *-- Dino
+Juego *-- Obstaculo
+Juego *-- Escenario
+
+@enduml
